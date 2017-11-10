@@ -1,0 +1,29 @@
+==================================================================
+Use the Azure Cosmos DB Emulator for local development and testing
+==================================================================
+https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator
+
+Shell
+	docker pull microsoft/azure-cosmosdb-emulator
+
+PowerShell
+	md $env:LOCALAPPDATA\CosmosDBEmulatorCert 2>null
+	docker run -v $env:LOCALAPPDATA\CosmosDBEmulatorCert:c:\CosmosDBEmulator\CosmosDBEmulatorCert -P -t -i -m 2GB microsoft/azure-cosmosdb-emulator
+
+Command Prompt (Admin)
+	cd %LOCALAPPDATA%\CosmosDBEmulatorCert
+	powershell .\importcert.ps1
+
+URL = https://<emulator endpoint provided in response>/_explorer/index.html
+
+======================================================================
+Azure Cosmos DB: Getting started with the DocumentDB API and .NET Core
+======================================================================
+https://docs.microsoft.com/en-us/azure/cosmos-db/documentdb-dotnetcore-get-started
+
+===========
+Change Feed
+===========
+Working with the change feed support in Azure Cosmos DB - https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed
+Sample - https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/ChangeFeedProcessor
+NuGet - https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/
